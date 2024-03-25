@@ -4,7 +4,7 @@ public class ContarVocales {
 
 	public static void main(String[] args) {
 		String cadena= "Esto es un texto nuevo i";
-		String cadena2="AEiou asi";
+//		String cadena2="AEiou asi";
 		// cuantas vocales tiene ese texto?
 		int contador = 0;
 		for (int i=0; i<cadena.length(); i++) {
