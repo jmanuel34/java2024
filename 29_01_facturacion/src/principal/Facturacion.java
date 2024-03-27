@@ -13,13 +13,22 @@ public class Facturacion {
 				+ "OtroMas-44444," 
 				+ "Ultimo-7500";
 		String[] facturaciones = facturacion.split(",");
+		String [][] deptos= new String [facturaciones.length][2]; 		
 		for (String n:facturaciones) {
-			System.out.print(n.substring(0, n.indexOf('-'))+": ");
-			System.out.println(n.substring(n.indexOf('-')+1,n.length() ));
 			
-			// Departamento d= 
-			// System.out.println(n.substring(n.charAt(n.indexOf('-'))));
-			//			System.out.println(n);
+			String depto;
+			String deptFact;
+			Departamento dept= new Departamento (n.substring(0, n.indexOf('-')),
+										Integer.parseInt(n.substring(n.indexOf('-')+1,n.length() )));
+					
+		}
+		String depto;
+		String deptFact;
+		for (int i=0; i<deptos.length; i++) {
+			depto= facturaciones[i].substring(0, 
+						Integer.parseInt(facturaciones[i].substring(facturaciones[i].indexOf('-'))));
+			deptFact = facturaciones[i].substring(Integer.parseInt(facturaciones[i].substring(facturaciones[i].indexOf('-'))),
+					facturaciones[i].length());
 		}
 		
 
