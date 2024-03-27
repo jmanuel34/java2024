@@ -29,7 +29,7 @@ public class Facturacion {
 		for (int n = 0; n < facturaciones.length; n++) {
 			depto[n] = facturaciones[n].toString().split("-");
 		}
-		// Comentacvio
+		// Comentario nuevo
 		for (int i = 0; i < depto.length - 1; i++) {
 			for (int j = i; j < depto.length; j++) {
 				if (Integer.valueOf(depto[i][1]) > Integer.valueOf(depto[j][1])) {
