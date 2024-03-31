@@ -64,9 +64,9 @@ public class Facturacion {
 	
 		
 		System.out.println("-----------------------------------------");
-		System.out.println("Departamento de máxima facturacion: ");	
+		System.out.print("Departamento de máxima facturacion: ");	
 		Depto maximo= Collections.max(list, new Depto());
-		System.out.println("Departamento: " +maximo.getDeptonombre()+ "; Facturacion: "+maximo.getDeptofact());
+		System.out.println(maximo.getDeptonombre()+ "; Su Facturacion: "+maximo.getDeptofact());
 	}
 	
 }

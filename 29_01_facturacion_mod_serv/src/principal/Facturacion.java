@@ -40,7 +40,7 @@ public class Facturacion {
 			service.agregar(dep);
 		}
 		Depto dep = service.FacturacionMasAlta();
-		System.out.println("Departamento con Facturacion mas alta: "+dep.getNombre()+ ";Facturacion: "+dep.getFacturacion());
+		System.out.println("Departamento con Facturacion mas alta: "+dep.getNombre()+ "; Facturacion: "+dep.getFacturacion());
 		System.out.println(" ");
 		
 		System.out.println("----------------------");
