@@ -29,11 +29,7 @@ public class Facturacion {
 		for (int n = 0; n < facturaciones.length; n++) {
 			depto[n] = facturaciones[n].toString().split("-");
 		}
-<<<<<<< HEAD
-		// Comentario nuevo   
-=======
-		// Ordenacion del array
->>>>>>> bac13c7c8a03a3f3ae70d6ddf2920f8b2097140f
+
 		for (int i = 0; i < depto.length - 1; i++) {
 			for (int j = i; j < depto.length; j++) {
 				if (Integer.valueOf(depto[i][1]) > Integer.valueOf(depto[j][1])) {
