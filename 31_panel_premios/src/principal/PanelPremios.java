@@ -3,45 +3,34 @@ package principal;
 public class PanelPremios {
 
 	public static void main(String[] args) {
-		int DIMENSION=10;
+		final int DIMENSION=10;
 		final int CANTIDAD=5;
-		int [][] panel = new int [DIMENSION][DIMENSION];
+		String [][] panel = new String [DIMENSION][DIMENSION];
 		int [] generados = new int[CANTIDAD];
 		generarPanel(generados);
 		asignarNumeros(generados, panel);
 		presentarPanel(panel, DIMENSION);
 
 	}
-	static void presentarPanel(int [][]panel, int DIMENSION) {
+	
+	static void presentarPanel(String [][]panel, int DIMENSION) {
 
 		for (int i=0; i<DIMENSION; i++) {
 			for (int j=0; j<DIMENSION; j++) {
-				if (panel[i][j]==1) System.out.print("X ");
+				if (panel[i][j]=="X") System.out.print("X ");
 				else System.out.print("O ");
 			}
 		System.out.println("");
 		}
 	}
 
-	static void asignarNumeros(int [] generados, int [][] panel) {
+	static void asignarNumeros(int [] generados, String [][] panel) {
 		for (int i=0; i<generados.length; i++) {
-			panel[generados[i]/10][generados[i]%10]=1;
+			panel[generados[i]/10][generados[i]%10]="X";
 		}
 		
 	}
-/*	
-	static void asignarNumeros(int[] generados, int[][] panel) {
-		for (int i=0; i<panel.length; i++) {
-			for (int j=0; j<panel.length; j++) {
-				if ((i== generados[i]/10) && (j==generados[i]%10)) {
-					System.out.print("X");
-				}
-				else System.out.print("0");
-			}
-			System.out.println();
-		}
-	}
-*/
+
 	static void generarPanel(int []generados) {
 		int numero;
 		int cantidad =0;
@@ -67,10 +56,12 @@ public class PanelPremios {
 				}
 			}
 		}
+/*
 		for (int n:generados) {
 			System.out.print(n+",");
 		}
 		System.out.println();
+//*/
 	}
 	
 	static boolean repetido(int numero, int [] generados) {
