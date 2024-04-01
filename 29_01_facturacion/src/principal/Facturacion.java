@@ -22,7 +22,7 @@ public class Facturacion {
 										Integer.parseInt(n.substring(n.indexOf('-')+1,n.length() )));
 					
 		}
-		String depto;
+		String depto;   //Comentacio
 		String deptFact;
 		for (int i=0; i<deptos.length; i++) {
 			depto= facturaciones[i].substring(0, 
