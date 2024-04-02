@@ -6,23 +6,40 @@ public class NotasService {
 	ArrayList<Double> notas = new ArrayList<>();
 	
 	public void agregarNota(Double nota) {	
+		notas.add(nota);
 		
 	}
 	
 	public double calcularMedia() {
-		return 5.0;
+		double media=0;
+		for (double n:notas) {
+			media+=n;
+		}
+		return media/notas.size();
 	}
 	
 	public double max() {
-		return 5.0;
+		double max=0;
+		for (double n:notas)  {
+			if (n>max) max=n;
+		}
+		return max;
 		
 	}
 	public double min() {
-		return 5.0;
-		
+		double min=0;
+		for (double n:notas)  {
+			if (n<min) min=n;
+		}
+		return min;	
 	}
 	
-	public double [] devolverNotas() {
+	public double [] devolverNotas() {		
+		double[] arNotas = new double[notas.size()];
 		
+		for (int i=0; i<notas.size(); i++) {
+			arNotas[i]=notas.get(i);			
+		}
+		return arNotas;
 	}
 }
