@@ -56,12 +56,6 @@ public class PanelPremios {
 				}
 			}
 		}
-/*
-		for (int n:generados) {
-			System.out.print(n+",");
-		}
-		System.out.println();
-//*/
 	}
 	
 	static boolean repetido(int numero, int [] generados) {
