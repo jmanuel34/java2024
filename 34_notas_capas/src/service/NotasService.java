@@ -34,12 +34,15 @@ public class NotasService {
 		return min;	
 	}
 	
-	public double [] devolverNotas() {		
+	public Double [] devolverNotas() {		
+/*
 		double[] arNotas = new double[notas.size()];
 		
 		for (int i=0; i<notas.size(); i++) {
 			arNotas[i]=notas.get(i);			
 		}
-		return arNotas;
+*/
+//		return arNotas;
+		return notas.toArray(new Double[0]);
 	}
 }
