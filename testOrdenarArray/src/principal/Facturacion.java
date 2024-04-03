@@ -9,15 +9,12 @@ public class Facturacion {
 	// Method 4
 	// Main driver method
 	public static void main(String[] args) {
-
-		// Creating an empty ArrayList of custom class type
-		ArrayList<CustomObject> list = new ArrayList<>();
-
-		// Calling above methods defined inside class
-		GFG nuevo= new GFG();
-		// in main() method
-		nuevo.add(list);
-		nuevo.sort(list);
-		nuevo.print(list);
+		char c='@';
+		int p=c; //ok
+		System.out.println(p);
+		int num=3450;
+		System.out.println(num);
+		byte r=(byte)num; //ok c=(char)34.5; //ok
+		System.out.println(r);
 	}
 }

@@ -20,8 +20,7 @@ public class GFG {
     // using compareTo() method
     public static void sort(ArrayList<CustomObject> list) {
  
-    	list.sort(01,02)
-    	;
+    	list.sort(null);
     	//        list.sort((o1, o2)
         		
         		//                 -> o1.getValor().compareTo(
