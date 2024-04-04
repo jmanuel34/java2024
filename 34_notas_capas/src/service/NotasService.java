@@ -27,7 +27,7 @@ public class NotasService {
 		
 	}
 	public double min() {
-		double min=0;
+		double min=10;
 		for (double n:notas)  {
 			if (n<min) min=n;
 		}
