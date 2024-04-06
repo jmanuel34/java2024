@@ -11,13 +11,17 @@ public class PruebaFecha {
 		Date f1=new Date(Long.MAX_VALUE);
 		java.sql.Date fechaSql;
 //		System.out.println(f1);
+		
 		// fecha y hora concreta
 		Date f2= new Date(2023,10,20);	//Deprecated
+		
+		// Fecha y hora concreta
 		Calendar cal = Calendar.getInstance();
 		cal.set(2022, 0, 30, 10, 20, 35);
-		
 		Date f3=cal.getTime();
-//		System.out.println(f3);
+		System.out.println("Fecha con date "+ f3);
+
+		//		System.out.println(f3);
 		// Fecha a partir de una cadena de caracteres
 		String fecha= "04/10/1999 23:45";
 		SimpleDateFormat format= new SimpleDateFormat("dd/MM/yyyy HH:mm");

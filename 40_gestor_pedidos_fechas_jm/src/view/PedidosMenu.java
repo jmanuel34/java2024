@@ -31,7 +31,7 @@ public class PedidosMenu {
 		Date f1=calendar.getTime();
 		calendar.set(2022,11,30);
 		Date f2=calendar.getTime();
-		calendar.set(2022,11,31);
+		calendar.set(2022,10,29);
 		Date f3=calendar.getTime();
 		service.agregar(new Pedido("CocaCola", 20, f1));
 		service.agregar(new Pedido("Fanta", 21, f2));
@@ -120,10 +120,11 @@ public class PedidosMenu {
 		System.out.println("Introduce la fecha final: ");
 		fecha2 = sc.nextLine();
 		SimpleDateFormat format2 = new SimpleDateFormat ("dd/MM/yyyy");
-		Date date2 = format1.parse(fecha1);
+		Date date2 = format1.parse(fecha2);
 		
 		ArrayList<Pedido> pedidos = service.pedidosEntreFechas(date1, date2);
 		System.out.println("Pedidos entre fechas" + fecha1+ " y "+ fecha2);
+		System.out.println();
 		for (Pedido p: pedidos) {
 			System.out.println(p.getNombre()+ ", "+p.getUnidades()+ ", "+p.getFechaPedido());
 		}
