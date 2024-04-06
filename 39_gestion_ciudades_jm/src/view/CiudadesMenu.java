@@ -1,6 +1,9 @@
 package view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 import model.Ciudad;
 import model.CiudadPoblacion;
@@ -33,11 +36,14 @@ public class CiudadesMenu {
 		CiudadPoblacion ciudadPoblacion2 = new CiudadPoblacion(new Ciudad("Helsinki", "Finlandia"), 700_000);
 		CiudadPoblacion ciudadPoblacion3 = new CiudadPoblacion(new Ciudad("Pekin", "China"), 5_800_000);
 		CiudadPoblacion ciudadPoblacion4 = new CiudadPoblacion(new Ciudad("Roma", "Italia"), 2_800_000);
+		CiudadPoblacion ciudadPoblacion5 = new CiudadPoblacion(new Ciudad("Milan", "Italia"), 3_00_000);
 		service.agregarCP(ciudadPoblacion0);
 		service.agregarCP(ciudadPoblacion1);
 		service.agregarCP(ciudadPoblacion2);
 		service.agregarCP(ciudadPoblacion3);
 		service.agregarCP(ciudadPoblacion4);
+		service.agregarCP(ciudadPoblacion5);
+
 
 		int opcion;
 
@@ -87,7 +93,7 @@ public class CiudadesMenu {
 		nombre= sc.nextLine();
 		System.out.println("Introduce el pais: ");
 		pais= sc.nextLine();
-		System.out.println("Introduce la poblacion: ");
+		System.out.println("Introduce la poblacion 'EN CIFRA': ");
 		poblacion= Integer.parseInt(sc.nextLine());
 		Ciudad ciudad = new Ciudad (nombre, pais);
 		CiudadPoblacion ciudadP = new CiudadPoblacion(ciudad, poblacion);	
@@ -100,10 +106,21 @@ public class CiudadesMenu {
 	static void masPoblada() {
 		CiudadPoblacion cp = service.buscarMasPoblada();
 		System.out.print("La ciudad mas poblada es: ");
-		System.out.println(cp.getCiudad().getNombre()+ "con "+ cp.getPoblacion()+ " habitantes");
+		System.out.println(cp.getCiudad().getNombre()+ " con "+ cp.getPoblacion()+ " habitantes");
 	}
 	static void buscarPorPais() {
-		
+		ArrayList<CiudadPoblacion> aux = new ArrayList<>();
+		Scanner sc = new Scanner(System.in);
+		String pais;
+		System.out.println("Buscar por paises:");
+		System.out.println("Introduce el nombre del pais: ");
+		pais= sc.nextLine();
+		System.out.println("Resultado de ciudades en "+ pais);
+		aux = service.buscarPorPais(pais);
+		for (CiudadPoblacion cp:aux) {
+			System.out.println("Nombre: "+cp.getCiudad().getNombre()
+					+ " Poblacion: "+cp.getPoblacion());
+		}
 	}
 	
 
