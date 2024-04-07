@@ -49,7 +49,7 @@ public class PedidosService {
 				pedidosAux.add(p);
 			}
 		}
-		return pedidos;
+		return pedidosAux;
 	}
 
 }

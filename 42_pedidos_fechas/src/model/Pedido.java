@@ -16,4 +16,42 @@ en ese rango de fechas
 public class Pedido {
 	//*/
 
+import java.time.LocalDate;
+
+public class Pedido {
+	private String nombre;
+	private int unidades;
+	private LocalDate fechaPedido;
+	
+	public Pedido() {
+		super();
+	}
+	public Pedido(String nombre, int unidades, LocalDate fechaPedido) {
+		super();
+		this.nombre = nombre;
+		this.unidades = unidades;
+		this.fechaPedido = fechaPedido;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public int getUnidades() {
+		return unidades;
+	}
+	public void setUnidades(int unidades) {
+		this.unidades = unidades;
+	}
+	public LocalDate getFechaPedido() {
+		return fechaPedido;
+	}
+	public void setFechaPedido(LocalDate fechaPedido) {
+		this.fechaPedido = fechaPedido;
+	}
+	
+	
+
 }
+
