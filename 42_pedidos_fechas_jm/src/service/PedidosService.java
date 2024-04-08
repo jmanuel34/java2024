@@ -98,8 +98,8 @@ public class PedidosService {
 		// parametro, con la diferenci de dias entre la fehca suxiliar y el 
 		// parametro. si el pedido es inferior, actualizamos la variable pedido auxiliar
 		for (Pedido p:pedidos) {
-			if (Math.abs( ChronoUnit.DAYS.between(p.getFechaPedido(), fecha)) < paux ) {
-				paux=Math.abs(ChronoUnit.DAYS.between(p.getFechaPedido(), fecha));
+			if (Math.abs( ChronoUnit.DAYS.between(p.getFechaPedido(), fecha)) < 
+				Math.abs(ChronoUnit.DAYS.between(p.getFechaPedido(), fecha)));
 				paux = p;
 			}
 		return paux;

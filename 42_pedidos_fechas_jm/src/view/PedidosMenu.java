@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import model.Pedido;
@@ -29,46 +30,51 @@ public class PedidosMenu {
 		Scanner sc = new Scanner(System.in);
 
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-//*	
-		LocalDate fecha1 = LocalDate.parse("11/10/2023", dtf);
-		LocalDate fecha2 = LocalDate.parse("11/11/2023", dtf);
-		LocalDate fecha3 = LocalDate.parse("13/12/2023", dtf);
-		LocalDate fecha4 = LocalDate.parse("14/09/2023", dtf);
-		LocalDate fecha5 = LocalDate.parse("15/02/2023", dtf);
-		
-		service.agregar(new Pedido("CocaCola", 20, fecha1));
-		service.agregar(new Pedido("Fanta", 21, fecha2));
-		service.agregar(new Pedido("Mirinda", 22, fecha3));
-		service.agregar(new Pedido("Agua Fontenova", 21, fecha4));
-		service.agregar(new Pedido("Agua Cabreiroa", 22, fecha5));
-		
-//*/	
-		int opcion;
+		/*
+		 * LocalDate fecha1 = LocalDate.parse("11/10/2023", dtf); LocalDate fecha2 =
+		 * LocalDate.parse("11/11/2023", dtf); LocalDate fecha3 =
+		 * LocalDate.parse("13/12/2023", dtf); LocalDate fecha4 =
+		 * LocalDate.parse("14/09/2023", dtf); LocalDate fecha5 =
+		 * LocalDate.parse("15/02/2023", dtf);
+		 * 
+		 * service.agregar(new Pedido("CocaCola", 20, fecha1)); service.agregar(new
+		 * Pedido("Fanta", 21, fecha2)); service.agregar(new Pedido("Mirinda", 22,
+		 * fecha3)); service.agregar(new Pedido("Agua Fontenova", 21, fecha4));
+		 * service.agregar(new Pedido("Agua Cabreiroa", 22, fecha5));
+		 * 
+		 * //
+		 */
+		int opcion=0;
 
 		do {
 			// presentar menu
 			// leer opción y comprobar opcion elegida
 			presentarMenu();
-			opcion = sc.nextInt();
-			switch (opcion) {
-			case 1:
-				agregarPedido();
-				break;
-			case 2:
-				masReciente();
-				break;
-			case 3:
-				buscarEntreFechas();
-				break;
-			case 4:
-				masCercano();
-				break;
-			case 5:
-				System.out.println("Adios!");
-				break;
+			try {
+				opcion = Integer.parseInt(sc.nextLine());
 
-			default:
-				System.out.println("Opción no válida!");
+				switch (opcion) {
+				case 1:
+					agregarPedido();
+					break;
+				case 2:
+					masReciente();
+					break;
+				case 3:
+					buscarEntreFechas();
+					break;
+				case 4:
+					masCercano();
+					break;
+				case 5:
+					System.out.println("Adios!");
+					break;
+
+				default:
+					System.out.println("Opción no válida!");
+				}
+			} catch (NumberFormatException ex) {
+				System.out.println("Error: Introduce un numero!!!");
 			}
 		} while (opcion != 5);
 
@@ -149,7 +155,7 @@ public class PedidosMenu {
 		System.out.println("Introduce la fecha (dd/MM/yyyy): ");
 		fecha = sc.nextLine();
 		LocalDate ld = LocalDate.parse(fecha, format);
-		System.out.println(" El pedido mas cercano es:" +service.pedidoMasCercano(ld).getNombre());
+		System.out.println(" El pedido mas cercano es:" + service.pedidoMasCercano(ld).getNombre());
 
 	}
 
