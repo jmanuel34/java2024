@@ -40,6 +40,7 @@ public class GuardarCursosFichero {
 		String ruta = "C:\\Users\\manana\\Curso Java\\Java2024\\cursos.txt";
 		try (FileOutputStream fos= new FileOutputStream(ruta, true); 
 				PrintStream out= new PrintStream(fos);) {
+//			for (String c:cursos)
 			for (int i=0; i<cursos.length; i++) {
 				if (cursos[i].contains(nombre)) {
 					out.println(cursos[i]);
