@@ -18,10 +18,10 @@ class TestPedidosService {
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		service.borrarPedidos();
-			
+		
+		LocalDate f1=LocalDate.of(2023,11,30);		
 		LocalDate f2=LocalDate.of(2022,4, 11);
-		LocalDate f3=LocalDate.of(2022,10,1);
-		LocalDate f1=LocalDate.of(2023, 11,30);	
+		LocalDate f3=LocalDate.of(2022,10,1);	
 		service.nuevoPedido(new Pedido("coca cola",20,f1));
 		service.nuevoPedido(new Pedido("whisky",1,f2));
 		service.nuevoPedido(new Pedido("patatas fritas",10,f3));
@@ -29,8 +29,8 @@ class TestPedidosService {
 	
 	@Test
 	void testPedidoProximoFecha() {
-		assertEquals("coca cola", service.pedidoProximoFecha(LocalDate.of(2023, 12, 7)).getProducto());
-		assertEquals("patatas fritas", service.pedidoProximoFecha(LocalDate.of(2022, 8, 7)).getProducto());
+		assertEquals("coca cola", service.pedidoProximoFecha(LocalDate.of(2023,10,2)).getProducto());
+		assertEquals("patatas fritas", service.pedidoProximoFecha(LocalDate.of(2022,8,7)).getProducto());
 	}
 
 	@Test

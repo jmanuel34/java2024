@@ -11,6 +11,15 @@ import service.PedidosService;
 public class PedidosMenu {
 	static PedidosService service=new PedidosService();
 	public static void main(String[] args)  {
+		service.borrarPedidos();
+		
+		LocalDate f1=LocalDate.of(2023,11,30);		
+		LocalDate f2=LocalDate.of(2022,4, 11);
+		LocalDate f3=LocalDate.of(2022,10,1);	
+		service.nuevoPedido(new Pedido("coca cola",20,f1));
+		service.nuevoPedido(new Pedido("whisky",1,f2));
+		service.nuevoPedido(new Pedido("patatas fritas",10,f3));
+		
 		Scanner sc=new Scanner(System.in);
 		int opcion=0;
 		do {

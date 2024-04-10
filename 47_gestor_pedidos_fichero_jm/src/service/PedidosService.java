@@ -34,21 +34,22 @@ public class PedidosService {
 	public Pedido pedidoMasReciente() {
 		LocalDate fMin = LocalDate.of(0,1,1);
 		String linea;
-		Pedido pedido= new Pedido();
-//		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		Pedido paux= new Pedido("",0,fMin);
+		Pedido pedido=new Pedido();;
+
 		try(FileReader fr=new FileReader(fichero);
 				BufferedReader bf=new BufferedReader(fr)){
 			//mientras haya una nota que leer
 			while((linea=bf.readLine())!=null) {
-				 pedido = Util.convertirCadenaAPedido(linea);
-				if (fMin.isBefore(pedido.getFechaPedido())) {
-					fMin = pedido.getFechaPedido();
+				  pedido = Util.convertirCadenaAPedido(linea);
+				if (paux.getFechaPedido().isBefore(pedido.getFechaPedido())) {
+					paux = pedido;
 			}
 		}
 		}catch(IOException ex) {
 			ex.printStackTrace();
 		}
-		return pedido;
+		return paux;
 	}
 	
 	public ArrayList<Pedido> pedidosEntreFechas(LocalDate f1, LocalDate f2) {
